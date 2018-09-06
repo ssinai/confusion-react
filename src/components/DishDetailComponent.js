@@ -7,11 +7,12 @@ class DishDetail extends Component {
   renderComments(comments) {
     const listComments = comments.map((comment) =>
       <li key={comment.id.toString()}>
-      <span><p>
-        {comment.comment}</p><p>--{comment.author},&nbsp;
+      <p>
+        {comment.comment}</p>
+      <p>--{comment.author},&nbsp;
         {new Intl.DateTimeFormat('en-US',
           {year: 'numeric', month: 'short', day: '2-digit'}).format(
-          new Date(Date.parse(comment.date)))}</p></span>
+          new Date(Date.parse(comment.date)))}</p>
       </li>
     );
 
