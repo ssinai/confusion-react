@@ -31,7 +31,7 @@ function RenderLeader({leader}) {
 }
 
 
-function About(props) {
+const About = (props) => {
 
     const leaders = props.leaders.leaders.map((leader) => {
         return (
@@ -41,7 +41,27 @@ function About(props) {
         );
     });
 
-    return(
+    if (props.leaders.isLoading) {
+        return(
+            <div className="container">
+                <div className="row">
+                    <Loading />
+                </div>
+            </div>
+        );
+    }
+    else if (props.leaders.errMess) {
+        return(
+            <div className="container">
+                <div className="row">
+                    <div className="col-12">
+                        <h4>{props.leaders.errMess}</h4>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+    else return(
         <div className="container">
             <div className="row">
                 <Breadcrumb>

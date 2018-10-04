@@ -105,8 +105,8 @@ export const postFeedback = (firstname, lastname, telnum,
             throw error;
       })
     .then(response => response.json())
-    .then(response => dispatch(addFeedback(response)))
-    .catch(error =>  { console.log('post comments', error.message); alert('Your feedback could not be posted\nError: '+error.message); });
+//    .then(response => dispatch(addFeedback(response)))
+    .catch(error =>  { console.log('post feedback', error.message); alert('Your feedback could not be posted\nError: '+error.message); });
 };
 
 export const addFeedback = (feedback) => ({

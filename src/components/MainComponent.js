@@ -33,7 +33,6 @@ const mapDispatchToProps = dispatch => ({
   fetchComments: () => dispatch(fetchComments()),
   fetchLeaders: () => dispatch(fetchLeaders()),
   fetchPromos: () => dispatch(fetchPromos())
-
 });
 
 
@@ -60,7 +59,6 @@ class Main extends Component {
             leader={this.props.leaders.leaders.filter((leader) => leader.featured)[0]}
             leaderLoading={this.props.leaders.isLoading}
             leaderErrMess={this.props.leaders.errMess}
-            postFeedback={this.props.postFeedback}
         />
       );
     }
