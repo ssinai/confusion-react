@@ -4,12 +4,16 @@ import { Breadcrumb, BreadcrumbItem, Card,
 import { Link } from 'react-router-dom';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
+import { FadeTransform } from 'react-animation-components';
 
 
 function RenderLeader({leader}) {
   return (
+    <FadeTransform in
+        transformProps={{
+            exitTransform: 'scale(0.5) translateY(-50%)'
+        }}>
     <Media className="py-2">
-
       <Media left>
         <Media object src={baseUrl + leader.image} alt={leader.name} />
       </Media>
@@ -22,6 +26,7 @@ function RenderLeader({leader}) {
         <p>{leader.description}</p>
       </Media>
     </Media>
+    </FadeTransform>
   );
 }
 
